@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/home.jpg') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+  <title> Sign Language Recognition</title>
+
+</head>
+<body>
+  <header>
+    <h1>SLR</h1>
+    <nav>
+      <ul>
+          <div  class="tright">
+        <li><a href="#">Home</a></li>
+        <li><a href="{{ url_for('login') }}">Login In</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+          </div>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About SLR</h2>
+      <p>SLR is a powerful web app that utilizes smachine learning algorithms, to recognize and interpret sign language gestures accurately...</p>
+    </section>
+
+  </main>
+  <div class="description-container">
+    <h2>Features</h2>
+    <p>
+        The SLR system is capable of recognizing sign language gestures in real-time to provide a seamless user experience.
+        It interprets the gestures quickly and accurately, allowing the web app to respond accordingly.</p>
+<p>
+      By incorporating SLR into a web app, it enhances accessibility for individuals who use sign language as their primary means of communication.
+       It enables deaf and hard-of-hearing users to interact with the app on an equal footing with non-sign language users
+    </p>
+  </div>
+
+<div class="responsive-container-block outer-container">
+  <div class="responsive-container-block inner-container">
+    <p class="text-blk heading-text">
+      Our Team
+    </p>
+    <p class="text-blk sub-heading-text">
+      Guided by Ms.Lithiya Sara Babu
+    </p>
+    <div class="responsive-container-block cards-container">
+      <div class="responsive-cell-block wk-desk-4 wk-ipadp-4 wk-mobile-12 wk-tab-12 card-container">
+        <p class="text-blk name">
+          Praveen Prasad
+        </p>
+        <p class="text-blk position">
+          Developer
+        </p>
+        <img class="team-member-image" src="{{ url_for('static', filename='team/praveen.jpg') }}"width="320" height="350">
+        <a href="https://www.twitter.com" target="_blank">
+          <img class="social-media-icon" src="{{ url_for('static', filename='icon/gl.png') }}"width="20" height="20">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+        </a>
+        <a href="https://github.com/ohpraveenprasad" target="_blank">
+          <img class="social-media-icon" src="{{ url_for('static', filename='icon/ggit.jpg') }}"width="20" height="20">
+        </a>
+        <a href="https://www.instagram.com/oh_praveen" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+        </a>
+      </div>
+      <div class="responsive-cell-block wk-desk-4 wk-ipadp-4 wk-mobile-12 wk-tab-12 card-container">
+        <p class="text-blk name">
+          Rajul Racy
+        </p>
+        <p class="text-blk position">
+          Developer
+        </p>
+        <img class="team-member-image" src="{{ url_for('static', filename='team/rajul.jpeg') }}"width="320" height="350">
+        <a href="https://www.twitter.com" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+        </a>
+        <a href="https://www.gmail.com" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+        </a>
+      </div>
+      <div class="responsive-cell-block wk-desk-4 wk-ipadp-4 wk-mobile-12 wk-tab-12 card-container">
+        <p class="text-blk name">
+          Athul Saji
+        </p>
+        <p class="text-blk position">
+          Developer
+        </p>
+        <img class="team-member-image" src="{{ url_for('static', filename='team/athul.jpg') }}"width="320" height="350">
+        <a href="https://www.twitter.com" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+        </a>
+        <a href="https://www.gmail.com" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img class="social-media-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer id="footer" class="footer">
+
+    <div class="contactus">
+          <h4>Contact Us</h4>
+          <p>
+            Viswajyothi College of Engineering and Technology <br>
+            Vazhakulam, Muvattupuzha<br>
+            Kerala <br><br>
+            <strong>Phone:</strong> +91 6282273841<br>
+            <strong>Email:</strong> 20rr191@gmail.com<br>
+          </p>
+
+        </div>
+
+
+
+    <div class="container cpy">
+      <div class="copyright">
+        &copy; Copyright <strong><span>SLR</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/register.png') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+<style>
+ .messages {
+            list-style: none;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        .messages li {
+            padding: 10px;
+        }
+
+
+
+        .messages .warning {
+            background-color: #FF0000
+            color: white;
+            padding: 5px;
+            width:500px;
+            margin-right: -400px;
+            margin-left: 500px;
+             text-align: center;
+
+        }</style>
+
+</head>
+
+</head>
+
+<body>
+<header>
+    <nav class="navbar">
+        <ul>
+            <div id="bb">
+        <a href="{{ url_for('home') }}">Home</a>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+    <h1>Register Page</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul class="messages">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <a href="{{ url_for('login') }}">Already have an account? Log In</a>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 50px;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        input[type="text"]{
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+
+            border: 1px solid #ccc;
+            border-radius: 50px;}
+        input[type="password"]{
+
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+
+            border: 2px solid #ccc;
+            border-radius: 50px;
+            }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+
+            border: 1px solid #ccc;
+            border-radius: 50px;
+        }
+
+.navbar {
+
+  background-color:none;
+
+}
+.navbar a{
+background-color: lightblue;
+  padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    margin-top: 10px;
+    padding: 10px;
+text-decoration:none;
+    color:#f1f1f1;
+    text-decoration: none;
+    border-radius: 14px;
+
+}
+.navbar a:hover{
+
+   color: black;
+
+}
+
+
+    input[type="text"]:hover{ background-color: #FCB8B7;
+     border-color: #5DC7FB;
+     border-width: 3px;
+     color:blue;
+    }
+    input[type="password"]:hover { background-color: #5DC7FB;
+        border-color: #FCB8B7;
+        border-width: 3px;
+    }
+input[type="submit"]:hover { background-color: #00000;
+        border-color: red;
+        border-width: 2px;
+        color:red
+    }
+
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+.messages {
+    list-style: none;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.messages li {
+    padding: 10px;
+}
+
+.messages .success {
+    background-color: #675fd9;
+    color: white;
+}
+.messages .warning {
+    background-color: #FF0000;
+    color: white;
+
+}
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #000000;
+            text-decoration: none;
+            font-size: 25px;
+        }
+  a:hover {
+        color: #FF5733 ;
+
+    }
+
+         body {
+  background-image: url('register.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</body>
+    </style>
+</head>
+
+<body>
+    <h1>Register Page</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
+
+    <a href="{{ url_for('login') }}">Already have an account? Log In</a>
+
+</body>
+
+</html>

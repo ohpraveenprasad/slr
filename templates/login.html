@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginn.css') }}">
+      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/login.png') }}">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login For Sign Language Recognition</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;900&display=swap" rel="stylesheet" />
+
+
+<style>
+      h1 {
+        font-size: 4rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+      body {
+        margin: 0;
+        font-family: 'Prompt', sans-serif;
+        color: white;
+        background: #202731;
+        overflow-x: hidden;
+      }
+
+      section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 400px;
+        padding-top: 100px;
+      }
+
+.blue {
+        background: #feb6c1;
+        overflow: hidden;
+      }
+  /* aligns blob */
+ .blob-align {
+        position: absolute;
+        transform: translateY(-20%);
+        z-index: 0;
+      }
+
+      .blob-behind {
+        z-index: 1;
+      }
+
+
+    </style>
+
+ <style>
+        .messages {
+            list-style: none;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        .messages li {
+            padding: 10px;
+        }
+
+.messages .success {
+            background-color: #00FF00;
+            color: white;
+        }
+
+        .messages .danger {
+            background-color: #FF0000;
+            color: white;
+        }
+    </style>
+ </head>
+  <body>
+<header>
+    <nav class="navbar">
+        <ul>
+            <div id="bb">
+        <a href="{{ url_for('home') }}">Home</a>
+            </div>
+        </ul>
+    </nav>
+</header>
+ 
+
+
+ <section class="blue">
+      <div class="blob-behind ">
+        <h1>Login To Use</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul class="messages">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <a href="{{ url_for('register') }}">Don't have an account? Sign Up</a>
+      </div>
+
+      <svg
+        class="blob-align"
+        id="visual"
+        viewBox="0 0 960 540"
+        width="960"
+        height="540"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+      >
+        <g transform="translate(450.7256843113689 283.4942824330989)">
+          <path
+            id="blob1"
+            d="M148.7 -134.9C193.7 -103.7 231.9 -51.9 232.4 0.6C233 53 196.1 106.1 151.1 128.6C106.1 151.1 53 143 -4.4 147.4C-61.8 151.8 -123.5 168.5 -151.2 146C-178.8 123.5 -172.4 61.8 -172.8 -0.4C-173.1 -62.5 -180.3 -124.9 -152.6 -156.1C-124.9 -187.3 -62.5 -187.1 -5.3 -181.8C51.9 -176.5 103.7 -166 148.7 -134.9"
+            fill="#61a8e6"
+          ></path>
+        </g>
+
+
+  
+
+   
+  </body>
+</html>

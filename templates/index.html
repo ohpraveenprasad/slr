@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Language Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/index.ico') }}">
+
+</head>
+<body>
+<header>
+   <nav class="navbar">
+        <ul>
+            <div id="bb">
+        <a href="{{ url_for('saved_strings') }}">History</a>
+            </div>
+        <div id="main1">
+  <button class="openbtn2" onclick="openNav1()"> ASL</button>
+</div>
+            <div id="main">
+  <button class="openbtn" onclick="openNav()">About</button>
+             </div>
+
+
+            <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+        </ul>
+    </nav>
+</header>
+    <h2>Sign Language Recognition</h2>
+    <div class="container">
+        <div class="video">
+            <img src="{{ url_for('video') }}" width="70%">
+             </div>
+             <div class="text-output">
+            <h3>Recognized Text:</h3>
+            <p id="output">{{ string }}</p>
+
+        </div>
+    </div>
+        <div class="instructions">
+            <h4>Controls:</h4>
+            <ul>
+                <li>Press <strong>Enter</strong> on keyboard to save the recognized text.</li>
+                <li>Press <strong>Spacebar</strong> on keyboard to add a space.</li>
+                <li>Press <strong>Backspace</strong> on keyboard to delete the last character or <strong>Delete</strong> to delete the entire text</li>
+                <li><strong>NOTE: The hand must be on the screen to display the text to save,delete or to leave a space between them</strong></li>
+            </ul>
+        </div>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+   <p11>Creators</p11>
+    <p12>Praveen Prasad</p12>
+     <p12>Rajul racy</p12>
+     <p12>Athul saji</p12>
+    <p11>Guide</p11>
+    <p13> Ms. Lithiya Sara Babu</p13>
+    <p14> Contact us</p14>
+    <div class="social-container">
+  <a href="https://www.instagram.com/oh_praveen" target="_blank">
+    <img src="{{ url_for('static', filename='icon/insta.png') }}"  alt="insta" width="30" height="30">
+  </a>
+  <a href="https://github.com/ohpraveenprasad" target="_blank">
+    <img src="{{ url_for('static', filename='icon/git.png') }}" alt="github" width="30" height="30">
+  </a>
+        <a href="https://www.instagram.com/oh_praveen" target="_blank">
+    <img src="{{ url_for('static', filename='icon/link.png') }}"  alt="lid" width="30" height="30">
+  </a>
+</div>
+
+
+
+</div>
+
+     <div id="mySidebar1" class="sidebar2">
+  <a3 href="javascript:void(0)" class="closebtn2" onclick="closeNav1()">×</a3>
+  <a3 href="#">Asl</a3>
+<a3 href="#">
+  <img src="{{ url_for('static', filename='icon/pr1.png') }}" alt="Button Image" width="280" height="250">
+</a3>
+
+</div>
+        <script>
+            function updateText() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "/get_string", true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var response = xhr.responseText;
+                        document.getElementById("output").innerText = response;
+                    }
+                };
+                xhr.send();
+            }
+
+            // Update the text every 1 second
+            setInterval(updateText, 1000);
+        </script>
+
+          
+
+        <form action="/predict" method="post">
+            <button type="submit">Start</button>
+        </form>
+        <form action="/stop" method="post">
+            <button type="submit">Stop</button>
+        </form>
+<script>
+            function showImage() {
+                var descriptionDiv = document.getElementById("description");
+                var imageDiv = document.getElementById("image");
+                descriptionDiv.style.display = "none";
+                imageDiv.style.display = "block";
+            }
+        </script>
+
+<script>
+function opendb1(){
+
+}
+
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "0px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+<script>
+function openNav1() {
+  document.getElementById("mySidebar1").style.width = "350px";
+  document.getElementById("main1").style.marginLeft = "0px";
+}
+
+function closeNav1() {
+  document.getElementById("mySidebar1").style.width = "0";
+  document.getElementById("main1").style.marginLeft= "0";
+}
+</script>
+  <script>
+
+    function handleKeyPress(event) {
+
+      if (event.keyCode === 32) {
+        event.preventDefault(); // Prevent the default behavior (scrolling)
+      }
+    }
+    document.addEventListener('keypress', handleKeyPress);
+  </script>
+
+<button class="button111">Minimum Instruction Info</button>
+
+  <script>
+    // Function to handle button click event
+    function handleClick() {
+      alert('Press START button to start the recognition\nPress STOP button to get the audio and store the saved text to history\nClick on History to see past saved recognition\nFor more instructions click Detailed Instruction button '); // Replace '...' with your instructions
+    }
+
+    // Get the button element
+    var button111 = document.querySelector('.button111');
+
+    // Attach the click event listener to the button
+    button111.addEventListener('click', handleClick);
+  </script>
+
+
+    </div>
+
+
+  <div class="cins">
+    <center>
+    <p> <details>
+      <summary><b>Detailed Instruction</b></summary>
+      <p> <strong>CLICK ON THE START BUTTON</strong>,to start the sign language recognition to speech,If lagging occurs with the camera screen click on <strong>START BUTTON</strong><br>
+      <br>
+      >>Press <strong>"Enter"</strong>on your keyboard to save the text recognised for converting to speech.<br>
+      <br>
+      >>Press <strong>"Space Bar"</strong> to leave a space.<br>
+      <br>
+      >>Click <strong>"Backspace"</strong> key on your keyboard to delete a character from right to left.<br>
+      <br>
+      >>Click <strong>"Delete"</strong> to delete entire text.<br>
+      <br>
+      >> The Saved text appears on the top left corner of the video Screen<br>
+      <br>
+      >> Once you are satisfied with the saved text press<b>"STOP"</b> to convert it into speech<br>
+      <br>
+      >><b>NOTE: The hand must be on the screen to display the text to save,delete or to leave a space between them.</b>
+
+      </p>
+    </details></p>
+  </center>
+</div>
+</body>
+</html>
