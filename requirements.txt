@@ -34,7 +34,7 @@ keyboard==0.13.5
 kiwisolver==1.4.4
 libclang==16.0.6
 Markdown==3.4.3
-MarkupSafe==2.1.2
+MarkupSafe==2.0.0
 matplotlib==3.5.3
 mediapipe==0.8.10.1
 numpy==1.21.6
